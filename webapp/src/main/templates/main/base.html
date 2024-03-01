@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title> CatDog downloader </title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <form action="{% url 'home' %}"" method='POST'>
+        {% csrf_token %}
+    <p>На этом сайте вы можете скачать рандомные изображения котиков или собачек для поднятия настроения. :)</p>
+    <p>Выберите, чье изображение вы хотите получить, и кол-во картинок:</p>
+    <div>
+        <div>
+        <input type="radio" id="cat" name="animal" value="cat" checked />
+        <label for="cat">котиков</label>
+        </div>
+        </br>
+
+        <div>
+        <input type="radio" id="dog" name="animal" value="dog" />
+        <label for="dog">собачек</label>
+        </div>
+        </br>
+        
+        <div>
+        <label for="image_num">Кол-во изображений:</label>
+        <input type='number' name='image_num' min=1 max=50 value=1>
+        </div>
+        </br>
+    </div>
+
+    <div>
+        <button type="submit">Скачать</button>
+    </div>
+    </form>
+
+</body>
+</html>
